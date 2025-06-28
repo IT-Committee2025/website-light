@@ -4,7 +4,7 @@ const SITE_CONFIG = {
     // ローカル環境: ""
     // GitHub Pages: "/username/repository-name"
     // カスタムドメイン: ""
-    rootPath: "/light-theme",
+    rootPath: "/website-light",
 
     // サイト名
     siteName: "創作展",
