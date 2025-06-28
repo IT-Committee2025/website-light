@@ -29,6 +29,7 @@ function convertRootPathsToAbsolute(componentElement) {
 // コンポーネントを読み込む関数
 function loadComponent(componentName, placeholderId) {
     const componentPath = SITE_CONFIG.rootPath + '/component/' + componentName + '.html';
+    console.log(componentPath);
 
     fetch(componentPath)
         .then(response => response.text())
