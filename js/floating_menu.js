@@ -20,7 +20,7 @@ function toggleMobileMenu() {
 
 // ページがトップページかどうかを判定
 function isTopPage() {
-    return window.location.pathname === '/' || window.location.pathname === '/index.html';
+    return window.location.pathname === SITE_CONFIG.rootPath + '/' || window.location.pathname === SITE_CONFIG.rootPath + '/index.html';
 }
 
 // スクロール時のメニュー表示制御
