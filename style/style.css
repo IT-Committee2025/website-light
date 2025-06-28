@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@100;200;300;400;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Exo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+
+
+/* スクロールアニメーション */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .fade-in {
+  opacity: 0;
+  position: relative;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: 20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+} */
+
+/* ヘッダー */
+/* これから書く */
+
+
+/* フッター */
+.footer {
+    margin-top: 5rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #f0f4f8;
+    border-top: 1px solid rgba(26, 54, 93, 0.2);
+    box-shadow: 0 -5px 15px rgba(26, 54, 93, 0.1);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    line-height: 1.8;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+.footer-links {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-link {
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.footer-link:hover {
+    color: #2c3e50;
+    background: rgba(26, 54, 93, 0.1);
+    transform: translateY(-2px);
+}
+
+.external-icon {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.footer-link:hover .external-icon {
+    transform: translate(2px, -2px);
+    opacity: 1;
+}
+
+.footer-separator {
+    color: #5a5a5a;
+    margin: 0 1rem;
+    font-weight: 300;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #5a5a5a;
+}
+
+
+
+/* フローティングメニュー（PC） */
+.floating-menu {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.3s ease;
+}
+
+.floating-menu.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.floating-menu-item {
+    background: #ffffff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(26, 54, 93, 0.3);
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+}
+
+.floating-menu-item:hover {
+    background: #ffffff;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.2);
+    border-color: rgba(26, 54, 93, 0.5);
+}
+
+/* モバイルメニュー */
+.mobile-menu-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1001;
+    font-weight: bold;
+    color: #2c3e50;
+    display: none;
+    border: 2px solid rgba(26, 54, 93, 0.3);
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+}
+
+.mobile-menu-toggle.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    border: 2px solid rgba(26, 54, 93, 0.3);
+    box-shadow: 0 10px 30px rgba(26, 54, 93, 0.2);
+}
+
+.mobile-menu.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mobile-menu-item {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(52, 73, 94, 0.25);
+}
+
+.mobile-menu-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu-item:hover {
+    color: #34495e;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+.mobile-menu.hide {
+    animation: slideDown 0.3s ease;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .floating-menu {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .footer {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+    }
+
+    .footer h3 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-links {
+        margin: 1rem 0;
+    }
+
+    .footer-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-separator {
+        margin: 0 0.5rem;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+        padding-bottom: 3rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .theme {
+        font-size: 2.2rem;
+        letter-spacing: 8px;
+        padding: 15px 25px;
+    }
+
+    .theme-container::before,
+    .theme-container::after {
+        width: 80px;
+        height: 80px;
+        border-width: 3px;
+    }
+
+    .theme-container::before {
+        top: -60px;
+        left: -30px;
+    }
+
+    .theme-container::after {
+        bottom: -40px;
+        right: -10px;
+    }
+
+    .theme-container .decoration-circle {
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+    }
+
+    .theme-container .decoration-triangle {
+        border-left-width: 20px;
+        border-right-width: 20px;
+        border-bottom-width: 30px;
+    }
+
+    .theme-container .decoration-square {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+
+    .theme-container .decoration-circle:nth-child(1) {
+        top: -40px;
+        right: -40px;
+        width: 70px;
+        height: 70px;
+        border-left-width: 2px;
+        border-top-width: 2px;
+    }
+
+    .theme-container .decoration-triangle:nth-child(2) {
+        bottom: -60px;
+        left: -20px;
+    }
+
+    .theme-container .decoration-square:nth-child(3) {
+        top: 15px;
+        left: -60px;
+    }
+
+    .theme-container .decoration-triangle:nth-child(4) {
+        top: -20px;
+        right: 15px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .countdown-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .countdown-display {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+        padding: 1.5rem 1rem;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .countdown-separator {
+        font-size: 2rem;
+    }
+
+    .event-date {
+        font-size: 1.2rem;
+    }
+
+    .event-time {
+        font-size: 1rem;
+    }
+
+    .event-location {
+        font-size: 1rem;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .nav-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        margin-top: 2rem;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .footer h3 {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.6rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .footer-links {
+        margin: 0.8rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .copyright {
+        font-size: 0.6rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .theme {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+        padding: 10px 20px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .theme-container::before,
+    .theme-container::after {
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+    }
+
+    .theme-container .decoration-circle {
+        width: 40px;
+        height: 40px;
+        border-width: 1px;
+    }
+
+    .theme-container .decoration-triangle {
+        border-left-width: 15px;
+        border-right-width: 15px;
+        border-bottom-width: 25px;
+    }
+
+    .theme-container .decoration-square {
+        width: 30px;
+        height: 30px;
+        border-width: 1px;
+    }
+
+    .theme-container .decoration-hexagon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .theme-container .decoration-diamond {
+        width: 20px;
+        height: 20px;
+        border-width: 1px;
+    }
+
+    .theme-container .decoration-star {
+        width: 20px;
+        height: 20px;
+    }
+
+    .theme-container .decoration-wave {
+        width: 40px;
+        height: 12px;
+        border-width: 1px;
+    }
+
+    .nav-section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.6rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.page-title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a365d;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* コンテンツエリア */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 2rem;
+}
+
+.content-box {
+    background: #ffffff;
+    border: 1px solid rgba(26, 54, 93, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(26, 54, 93, 0.1);
+}
+
+.content-box h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a365d;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.content-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
