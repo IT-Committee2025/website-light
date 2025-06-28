@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>抽選申し込み - 創作展</title>
+    <title>お問い合わせ - 創作展</title>
     <!-- cssを読み込む -->
     <link rel="stylesheet" href="../../style/style.css">
     <link rel="stylesheet" href="../../style/countdown.css">
@@ -25,19 +25,13 @@
 <body>
     <div id="header-placeholder"></div>
 
+
     <!-- パーティクル背景 -->
     <div class="particles" id="particles"></div>
 
-    <div class="page-title">抽選申し込み</div>
+    <div class="page-title">お問い合わせ</div>
 
-    <!-- コンテンツエリア -->
-    <div class="content-container fade-in">
-        <div class="content-box">
-            <h3>抽選申し込みについて</h3>
-            <p>5・6年生の劇は事前申し込み制となっております。</p>
-            <p>詳細は準備中です。</p>
-        </div>
-    </div>
+
 
     <!-- フッター -->
     <div id="footer-placeholder"></div>
@@ -45,7 +39,12 @@
     <!-- 浮遊メニュー -->
     <div id="floating-menu-placeholder"></div>
 
+
+
+
+
     <script>
+
         // パーティクルアニメーション
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
@@ -67,6 +66,7 @@
             }
         }
 
+
         // スクロールアニメーション
         function observeElements() {
             const elements = document.querySelectorAll('.fade-in');
@@ -85,11 +85,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             observeElements();
-            updateCountdown();
-
-            // カウントダウンを1秒ごとに更新
-            setInterval(updateCountdown, 1000);
         });
+
+
     </script>
 </body>
 
